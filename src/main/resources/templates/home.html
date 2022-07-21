@@ -14,31 +14,30 @@
         <h1>Mi dispiace ma la lista è vuota!</h1>
       </div>
       <div th:unless="${#lists.isEmpty(DepartmentsList)}">
-        <table>
+        <table class="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nome</th>
-              <th>Indirizzo</th>
-              <th>Telefono</th>
-              <th>E-mail</th>
-              <th>Sito Web</th>
-              <th>Capo Dipartimento</th>
+              <th scope="col" class="table-dark">Nome</th>
+              <th scope="col" class="table-dark">Indirizzo</th>
+              <th scope="col" class="table-dark">Telefono</th>
+              <th scope="col" class="table-dark">E-mail</th>
+              <th scope="col" class="table-dark">Sito Web</th>
+              <th scope="col" class="table-dark">Capo Dipartimento</th>
             </tr>
           </thead>
           <tbody>
             <tr th:each="dep : ${DepartmentsList} ">
-              <td th:text="${dep.getId()}"></td>
-              <td th:text="${dep.getName()}"></td>
-              <td th:text="${dep.getAddress()}"></td>
-              <td th:text="${dep.getPhone()}"></td>
-              <td th:text="${dep.getEmail()}"></td>
-              <td th:text="${dep.getWebsite()}"></td>
-              <td th:text="${dep.getHeadOfDepartment()}"></td>
+              <td class="table-secondary"><a th:href="@{|/dipartimenti/${dep.getId()}|}" th:text="${dep.getName()}"></a></td>
+              <td class="table-success" th:text="${dep.getAddress()}"><a href=""></a></td>
+              <td class="table-danger" th:text="${dep.getPhone()}"><a href=""></a></td>
+              <td class="table-warning" th:text="${dep.getEmail()}"><a href=""></a></td>
+              <td class="table-info" th:text="${dep.getWebsite()}"><a href=""></a></td>
+              <td class="table-light" th:text="${dep.getHeadOfDepartment()}"><a href=""></a></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <div th:replace="fragment :: footer"> </div>
   </body>
 </html>

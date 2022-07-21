@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <div th:replace="fragment :: risorse"></div>
-    <title>Benvenuto in E-Campus</title>
+    <title>Benvenuto All'Universita' Federico II di Napoli</title>
   </head>
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <div th:replace="fragment :: navbaruni('fristpage')"></div>
     <div class="container">
-    <h1>Benvenuto in E-Campus</h1>
+    <h1 class="text-center">Benvenuto All'Universita' Federico II di Napoli</h1>
     
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -17,13 +18,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://imgcdn.agendadigitale.eu/wp-content/uploads/2019/01/22182044/universita-tasse-leggera-diminuzione-restano-onerose.jpg.webp" class="d-block w-100" alt="...">
+      <img src="https://www.napolike.it/wp-content/uploads/2022/07/federicoII-napoli.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://www.units.it/press-area/immagini-edifici" class="d-block w-100" alt="...">
+      <img src="https://i0.wp.com/universityheritage.eu/wp-content/uploads/2020/07/Senza-titolo-1-2.jpg?fit=642%2C428&ssl=1" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://milano.unicusano.it/wp-content/uploads/2020/06/1.1-come-avere-una-media-alta-alluniversit%C3%A0.jpg" class="d-block w-100" alt="...">
+      <img src="https://uniperte.info/wp-content/uploads/2021/07/federico-II-1068x763.jpeg" class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -36,5 +37,6 @@
   </button>
 </div>
     </div>
+    <div th:replace="fragment :: footer"> </div>
   </body>
 </html>

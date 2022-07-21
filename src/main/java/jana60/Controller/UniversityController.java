@@ -1,17 +1,22 @@
 package jana60.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.server.ResponseStatusException;
 
 import jana60.Model.Degrees;
+import jana60.Model.Teachers;
 import jana60.Model.University;
 import jana60.Repository.DegreesRepository;
+import jana60.Repository.TeachersRepository;
 import jana60.Repository.UniversityRepository;
 
 @Controller
@@ -22,6 +27,8 @@ public class UniversityController {
 	private UniversityRepository repo;
 	@Autowired
 	private DegreesRepository repo2;
+	@Autowired
+	private TeachersRepository repo3;
 	
 	@GetMapping
 	public String fristpage() {
@@ -48,8 +55,28 @@ public class UniversityController {
 	public String departmentDetail(Model model, @PathVariable(name = "id") Integer departmentPrimaryKey) {
 		University currentDepartment = repo.findById(departmentPrimaryKey).get();
 		model.addAttribute("department", currentDepartment);
-		System.out.println(currentDepartment.getDegrees().size());
 		return "departmentDetail";
 	}
+	
+	@GetMapping("/teachers")
+	public String teachers(Model model) {
+		List<Teachers> TeachersList = (List<Teachers>)repo3.findAll();
+		model.addAttribute("TeachersList" ,TeachersList);
+		return "teachers";
+	}
+	
+	
+	@GetMapping("/teachers/{id}")
+	public String teachersDetail (Model model, @PathVariable(name = "id") Integer teachersPrimaryKey) {
+		Optional<Teachers> queryResult = repo3.findById(teachersPrimaryKey);
+	    if (queryResult.isPresent()) {
+	    	Teachers currentTeachers = repo3.findById(teachersPrimaryKey).get();
+			model.addAttribute("currentTeachers", currentTeachers);
+	      return "teachersDetail";
+	    } else {
+	      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Questo insegnante non esiste");
+	    }
+	    
 }
 	
+}

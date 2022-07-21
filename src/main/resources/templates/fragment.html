@@ -16,12 +16,12 @@
 	</th:block>
     <title>Document</title>
 </head>
-<body>
+<body >
 <th:block th:fragment="navbaruni(current)">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-  <img src="https://cafitaliaemiliaromagna.it/wp/wp-content/uploads/2021/02/eCampus-logo.png" style="height:50px"  class="w-20 px-3" alt="...">
-    <a class="navbar-brand" href="/">Università E-Campus</a>
+  <img src="https://eulaliaproject.eu/wp-content/uploads/2020/05/UNINA-2.jpg" style="height:50px"  class="w-20 px-3" alt="...">
+    <a class="navbar-brand" href="/">Università Federico II</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,15 +33,115 @@
         <li class="nav-item">
           <a class="nav-link" th:classAppend="${current == 'degrees'} ? active : not-active" href="/degrees">I nostri corsi</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" th:classAppend="${current == 'teachers'} ? active : not-active" href="/teachers">I nostri Insegnanti</a>
+        </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-info" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
     </th:block>
+    
+    <th:block th:fragment="background">
+<div class="has-bg-img">
+  <img class="bg-img" src="img/backgroud.jpg" alt="background">
+</div>	</th:block>
+    
+<th:block th:fragment="footer">
+<!-- Footer -->
+<footer class="bg-dark text-center text-lg-start bg-light text-muted pt-1 mt-4">
+  <!-- Section: Links  -->
+  <section class="" >
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Università Federico II
+          </h6>
+          <p>
+            Ciao chi te lo fa fare, fatti i corsi Java!
+          </p>
+        </div>
+        <!-- Grid column -->
 
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            I nostri migliori corsi
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Economia</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tecnologia Biomedicale</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Giurisprudenza</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Informatica</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Link utili
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Prezzi</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Opzioni</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Ordina Online</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Aiuto!</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            I nostri contatti:
+          </h6>
+          <p><i class="fas fa-home me-3"></i> Via Ponte di Tappia, 47, 80133 Napoli NA</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            staff@fedesecondo.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> 081 818 7938</p>
+          <p><i class="fas fa-print me-3"></i> 338 1554 1043</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">www.Federicosecondo.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+ </th:block>
 </body>
 </html>
